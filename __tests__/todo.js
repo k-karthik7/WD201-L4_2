@@ -23,7 +23,7 @@ describe("TodoList test cases", () => {
     ].forEach(add);
   });
   test("Add new todo", () => {
-    expect(all.length).toEqual(2);
+    expect(all.length).toBe(2);
 
     add({
       title: "Take the test",
@@ -31,24 +31,24 @@ describe("TodoList test cases", () => {
       dueDate: new Date().toLocaleDateString("en-CA"),
     });
 
-    expect(all.length).toEqual(3);
+    expect(all.length).toBe(3);
   });
 
   test("Todo mark as complete", () => {
-    expect(all[0].completed).toEqual(false);
+    expect(all[0].completed).toBe(false);
     markAsComplete(0);
-    expect(all[0].completed).toEqual(true);
+    expect(all[0].completed).toBe(true);
   });
 
   test("Test for overdue", () => {
-    expect(overdue().length).toEqual(0);
+    expect(overdue().length).toBe(0);
   });
 
   test("Test due today", () => {
-    expect(dueToday().length).toEqual(3);
+    expect(dueToday().length).toBe(3);
   });
 
   test("Test for due later", () => {
-    expect(dueLater().length).toEqual(0);
+    expect(dueLater().length).toBe(0);
   });
 });
