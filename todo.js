@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable arrow-body-style */
+/* eslint-disable no-undef */
 const todoList = () => {
   all = [];
   const add = (todoItem) => {
@@ -9,30 +13,27 @@ const todoList = () => {
 
   const overdue = () => {
     return all.filter(
-      (todo) => todo.dueDate < new Date().toLocaleDateString("en-CA")
+      (todo) => todo.dueDate < new Date().toLocaleDateString('en-CA'),
     );
   };
 
   const dueToday = () => {
     return all.filter(
-      (todo) => todo.dueDate == new Date().toLocaleDateString("en-CA")
+      (todo) => todo.dueDate === new Date().toLocaleDateString('en-CA'),
     );
   };
 
   const dueLater = () => {
     return all.filter(
-      (todo) => todo.dueDate > new Date().toLocaleDateString("en-CA")
+      (todo) => todo.dueDate > new Date().toLocaleDateString('en-CA'),
     );
   };
   const toDisplayableList = (list) => {
     return list
       .map(
-        (todo) =>
-          `${todo.completed ? "[x]" : "[ ]"} ${todo.title} ${
-            todo.dueDate == today ? "" : todo.dueDate
-          }`
+        (todo) => `${todo.completed ? '[x]' : '[ ]'} ${todo.title} ${todo.dueDate === today ? '' : todo.dueDate}`,
       )
-      .join("\n");
+      .join('\n');
   };
 
   return {
