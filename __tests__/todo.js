@@ -20,7 +20,7 @@ describe("TodoList test cases", () => {
         title: "File Taxes",
         completed: false,
         dueDate: new Date(
-          new Date(today.setDate(today.getDate() + 1))
+          new Date(today.setDate(today.getDate() - 1))
         ).toLocaleDateString("en-CA"),
       },
     ].forEach(add);
@@ -44,7 +44,7 @@ describe("TodoList test cases", () => {
   });
 
   test("Test for overdue", () => {
-    expect(overdue().length).toBe(1);
+    expect(overdue().length).toBe(2);
   });
 
   test("Test due today", () => {
@@ -52,6 +52,6 @@ describe("TodoList test cases", () => {
   });
 
   test("Test for due later", () => {
-    expect(dueLater().length).toBe(1);
+    expect(dueLater().length).toEqual(0);
   });
 });
