@@ -3,12 +3,6 @@ const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 describe("TodoList test cases", () => {
   beforeAll(() => {
     const today = new Date();
-    // let yesterday=new Date(today);
-    // yesterday.setDate(yesterday.getDate()-1)
-    // yesterday.toLocaleDateString("en-CA")
-    // let tomorrow=new Date(today);
-    // tomorrow.setDate(tomorrow.getDate()+1)
-    // tomorrow.toLocaleDateString("en-CA")
     [
       {
         title: "Submit assignment",
@@ -19,7 +13,7 @@ describe("TodoList test cases", () => {
         title: "File Taxes",
         completed: false,
         dueDate: new Date().toLocaleDateString("en-CA"),
-      }
+      },
     ].forEach(add);
   });
   test("Add new todo", () => {
